@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29721.120
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution", "solution", "{AEB2B0B4-3042-4588-88AE-776966523752}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0130DCFC-C93A-49F4-A2BC-501FF7D23D1E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeShare.TransferJob", "src\WeShare.TransferJob\WeShare.TransferJob.csproj", "{AD1653D2-587B-474F-A328-6915B42CFE57}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD1653D2-587B-474F-A328-6915B42CFE57}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD1653D2-587B-474F-A328-6915B42CFE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD1653D2-587B-474F-A328-6915B42CFE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD1653D2-587B-474F-A328-6915B42CFE57}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD1653D2-587B-474F-A328-6915B42CFE57} = {0130DCFC-C93A-49F4-A2BC-501FF7D23D1E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {555C38C6-C025-444A-8EF6-A57610ECE2EF}
+	EndGlobalSection
+EndGlobal
