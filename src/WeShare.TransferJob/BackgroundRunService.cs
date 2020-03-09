@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-
 namespace WeShare.TransferJob
 {
     public class BackgroundRunService : IBackgroundRunService
@@ -22,7 +22,6 @@ namespace WeShare.TransferJob
             _serviceProvider = serviceProvider;
             queue = new ConcurrentQueue<LambdaExpression>();
         }
-
         public async Task Execute(CancellationToken cancellationToken)
         {
             try
@@ -35,31 +34,21 @@ namespace WeShare.TransferJob
                         var action = job.Compile();
                         var isTask = action.Method.ReturnType == typeof(Task);
                         var parameters = job.Parameters;
-                        if (!parameters.Any())
-                        {
-                            if (isTask)
-                            {
-                                await (Task)action.DynamicInvoke();
-                            }
-                            else
-                            {
-                                action.DynamicInvoke();
-                            }
-                        }
-                        else
+                        var pars = new List<object>();
+                        if (parameters.Any())
                         {
                             var type = parameters[0].Type;
                             var param = scope.ServiceProvider.GetRequiredService(type);
-                            if (isTask)
-                            {
-                                await (Task)action.DynamicInvoke(param);
-                            }
-                            else
-                            {
-                                action.DynamicInvoke(param);
-                            }
+                            pars[0] = param;
                         }
-
+                        if (isTask)
+                        {
+                            await (Task)action.DynamicInvoke(pars.ToArray());
+                        }
+                        else
+                        {
+                            action.DynamicInvoke(pars.ToArray());
+                        }
                     }
                 }
             }
@@ -68,13 +57,11 @@ namespace WeShare.TransferJob
                 _logger.LogError(e.ToString());
             }
         }
-
         public void Transfer<T>(Expression<Func<T, Task>> expression)
         {
             queue.Enqueue(expression);
             _slim.Release();
         }
-
         public void Transfer(Expression<Action> expression)
         {
             queue.Enqueue(expression);

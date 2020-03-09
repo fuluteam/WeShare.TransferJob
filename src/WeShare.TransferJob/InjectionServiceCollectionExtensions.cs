@@ -1,8 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-
 namespace WeShare.TransferJob
 {
-
     namespace Microsoft.Extensions.DependencyInjection
     {
         public static class InjectionServiceCollectionExtensions

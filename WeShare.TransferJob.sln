@@ -12,6 +12,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0130DCFC-C93
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeShare.TransferJob", "src\WeShare.TransferJob\WeShare.TransferJob.csproj", "{AD1653D2-587B-474F-A328-6915B42CFE57}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sample", "sample", "{51E99847-9F4D-4073-BF07-C020E092A50F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeShare.TransferJob.Sample", "sample\WeShare.TransferJob.Sample\WeShare.TransferJob.Sample.csproj", "{2A91F8F4-B549-4611-A05F-FD72FF3466D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,12 +26,17 @@ Global
 		{AD1653D2-587B-474F-A328-6915B42CFE57}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD1653D2-587B-474F-A328-6915B42CFE57}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD1653D2-587B-474F-A328-6915B42CFE57}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A91F8F4-B549-4611-A05F-FD72FF3466D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A91F8F4-B549-4611-A05F-FD72FF3466D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A91F8F4-B549-4611-A05F-FD72FF3466D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A91F8F4-B549-4611-A05F-FD72FF3466D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{AD1653D2-587B-474F-A328-6915B42CFE57} = {0130DCFC-C93A-49F4-A2BC-501FF7D23D1E}
+		{2A91F8F4-B549-4611-A05F-FD72FF3466D7} = {51E99847-9F4D-4073-BF07-C020E092A50F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {555C38C6-C025-444A-8EF6-A57610ECE2EF}
