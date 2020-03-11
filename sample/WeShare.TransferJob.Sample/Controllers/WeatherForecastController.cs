@@ -24,6 +24,7 @@ namespace WeShare.TransferJob.Sample.Controllers
         public IActionResult Get()
         {
             _backgroundRunService.Transfer(()=>Console.WriteLine(Guid.NewGuid().ToString()));
+            _backgroundRunService.Transfer<IBaiduApi>(baidu=>baidu.GetBaidu());
             return Ok();
         }
     }

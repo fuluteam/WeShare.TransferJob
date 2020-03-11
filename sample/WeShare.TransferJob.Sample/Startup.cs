@@ -27,6 +27,8 @@ namespace WeShare.TransferJob.Sample
         {
             services.AddControllers();
             services.AddTransferJob();
+            services.AddHttpClient();
+            services.AddSingleton<IBaiduApi, BaiduApi>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

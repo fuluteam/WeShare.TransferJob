@@ -39,7 +39,7 @@ namespace WeShare.TransferJob
                         {
                             var type = parameters[0].Type;
                             var param = scope.ServiceProvider.GetRequiredService(type);
-                            pars[0] = param;
+                            pars.Add(param);
                         }
                         if (isTask)
                         {
