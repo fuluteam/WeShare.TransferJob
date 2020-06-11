@@ -17,7 +17,7 @@ namespace WeShare.TransferJob
         private readonly IServiceProvider _serviceProvider;
         public BackgroundRunService(ILogger<BackgroundRunService> logger, IServiceProvider serviceProvider)
         {
-            _slim = new SemaphoreSlim(1,1);
+            _slim = new SemaphoreSlim(1);
             _logger = logger;
             _serviceProvider = serviceProvider;
             queue = new ConcurrentQueue<LambdaExpression>();
